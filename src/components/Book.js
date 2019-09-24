@@ -1,12 +1,19 @@
-import React from "react";
+import React from "react"
 
-const Book = () => {
+const Book = props => {
+  console.log(props)
   return (
     <div>
-      <h2>{/*book title*/}</h2>
-      {/*book img*/}
+      <h2>{props.book.title}</h2>
+      <img
+        alt=""
+        src={props.book.img}
+        onClick={e => props.clickHandler(props.book)}
+      />
+      <button onClick={() => console.log("yolo")}>Add Comment</button>
+      <button onClick={() => console.log("dolo")}>Show Comments</button>
     </div>
-  );
-};
+  )
+}
 
-export default Book;
+export default Book
